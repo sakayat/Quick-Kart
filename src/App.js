@@ -1,13 +1,21 @@
 import React from 'react';
+import Navbar from "./components/Navbar";
+import {Route, Routes} from "react-router-dom";
+import Home from "./components/Home";
+import Footer from "./components/Footer";
 
 const App = () => {
-  return (
-    <div>
-      <h1 className="text-3xl font-bold underline text-center">
-      Hello world!
-    </h1>
-    </div>
-  );
+    return (
+        <>
+            <div className="min-h-screen bg-gray-50">
+                <Navbar/>
+                <Routes>
+                    <Route path="/" element={<Home/>}/>
+                </Routes>
+            </div>
+            <Footer/>
+        </>
+    );
 };
 
 export default App;

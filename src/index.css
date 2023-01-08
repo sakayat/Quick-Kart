@@ -2,3 +2,33 @@
 @tailwind components;
 @tailwind utilities;
 
+@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500;600;700;800;900&display=swap");
+
+body {
+    font-family: "Raleway", sans-serif;
+    color: #1e1e2f;
+    font-weight: 600;
+    overflow-x: hidden;
+}
+
+.nav-links .item-1 a,
+.item-2 a {
+       position: relative;
+}
+
+.nav-links .item-1 a::after,
+.item-2 a::after {
+  content: "";
+  position: absolute;
+  width: 0%;
+  height: 2px;
+  background-color: #F59E0B;
+  left: 0;
+  bottom: -2px;
+  transition: width 0.5s ease 0.5s;
+}
+
+.nav-links .item-1 a:hover::after,
+.item-2 a:hover::after {
+  width: 100%;
+}
