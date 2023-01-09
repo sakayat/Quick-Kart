@@ -64,7 +64,7 @@ const Slider = () => {
                 style={{transform: `translateX(-${100 * currentSlide}vw)`}}
                 className="slider-item relative">
                 {data.map((item) => (
-                    <div style={{backgroundImage: `url(${item.src})`}} className="slider relative">
+                    <div style={{backgroundImage: `url(${item.src})`}} className="slider relative" key={item.id}>
                         <Slide item={item}/>
                     </div>
                 ))}

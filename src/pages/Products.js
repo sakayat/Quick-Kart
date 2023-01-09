@@ -3,11 +3,9 @@ import Card from "../components/Card";
 import {useSelector} from "react-redux";
 
 
-
-
 const Products = () => {
 
-    const {items: data, status} = useSelector(state => state.products)
+    const {items: data} = useSelector(state => state.products)
 
     return (
         <div className="container mx-auto">

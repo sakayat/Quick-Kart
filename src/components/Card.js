@@ -1,10 +1,14 @@
 import React from "react";
 import {currencyFormat} from "../utilities/currencyFormate";
 import {useNavigate} from "react-router-dom";
+import {useDispatch} from "react-redux";
+import {addToCart} from "../features/cartSlice";
 
 const Card = ({item}) => {
+    const dispatch = useDispatch()
     const navigate = useNavigate();
-    const addToCartHandler = (id) => {
+    const addToCartHandler = (item) => {
+        dispatch(addToCart(item))
         navigate("/cart");
     };
 
@@ -19,7 +23,7 @@ const Card = ({item}) => {
                     <span className="text-red-500 text-sm font-bold">{currencyFormat(item.price)}</span>
                     <button
                         onClick={() => {
-                            addToCartHandler(item.id);
+                            addToCartHandler(item);
                         }}
                         className="uppercase text-white bg-[#155263] hover:bg-orange-500 duration-300 rounded-sm py-2 px-6">
                         Add Cart
