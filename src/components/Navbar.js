@@ -1,8 +1,10 @@
 import React from 'react';
 import {NavLink} from "react-router-dom";
 import {FiShoppingCart} from "react-icons/fi";
-
+import { useSelector } from "react-redux";
 const Navbar = () => {
+    
+	const { cartItems: data } = useSelector((state) => state.cart);
     return (
         <div className="dark:bg-white shadow-md relative z-10">
             <nav className="navbar container mx-auto flex items-center justify-between py-5">
@@ -23,7 +25,7 @@ const Navbar = () => {
                         <NavLink to="/" className="cart relative">
                             <FiShoppingCart className="text-2xl"/>
                             <span
-                                className=" inline-flex justify-center items-center absolute bottom-3 left-3 bg-red-500 text-white rounded-full w-5 h-5">10</span>
+                                className=" inline-flex justify-center items-center absolute bottom-3 left-3 bg-red-500 text-white rounded-full w-5 h-5">{data.length}</span>
                         </NavLink>
                     </li>
                 </ul>
