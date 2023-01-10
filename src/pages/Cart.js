@@ -89,9 +89,9 @@ const Cart = () => {
 								<button className="uppercase text-white bg-[#155263] hover:bg-orange-500 duration-300 rounded-sm py-2 px-6">
 									CHECKOUT
 								</button>
-								<button className="pb-5" to="/">
+								<Link className="pb-5" to="/products">
 									← Continue shopping
-								</button>
+								</Link>
 							</div>
 						</div>
 					</div>
