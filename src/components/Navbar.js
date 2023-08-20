@@ -10,8 +10,8 @@ const Navbar = () => {
             <nav className="navbar container mx-auto flex items-center justify-between py-5 px-8">
                 <div className="logo">
                     <NavLink to="/">
-                        <span className="text-2xl text-amber-500 font-bold">T</span>ech{" "}
-                        <span className="text-2xl text-amber-500 font-bold">A</span>lpha
+                        <span className="text-2xl text-amber-500 font-bold">Q</span>uick
+                        <span className="text-2xl text-amber-500 font-bold">K</span>art
                     </NavLink>
                 </div>
                 <ul className="nav-links flex items-center gap-10">
