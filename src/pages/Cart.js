@@ -24,7 +24,7 @@ const Cart = () => {
 
 
 	return (
-		<div className="container mx-auto cart">
+		<div className="container mx-auto px-8 cart">
 			<h2 className="uppercase text-2xl font-bold text-center py-6">
 				{data.length > 0 ? "your cart " : "your cart is empty"}
 			</h2>
@@ -59,22 +59,22 @@ const Cart = () => {
 								</div>
 							</div>
 							<span className="md:text-start text-end">{currencyFormat(product.price)}</span>
-							<div className="col-span-3 md:col-auto md:text-start text-center">
-								<button onClick={() => decreaseCartItem(product)} className="py-2 px-4 bg-gray-300">
+							<div className="flex text-center">
+								<button onClick={() => decreaseCartItem(product)} className="py-2 px-4 bg-gray-300 h-10">
 									-
 								</button>
 								<span className="py-2 px-4">{product.cartTotalQuantity}</span>
-								<button onClick={() => increaseCartItem(product)} className="py-2 px-4 bg-gray-300">
+								<button onClick={() => increaseCartItem(product)} className="py-2 px-4 bg-gray-300 h-10">
 									+
 								</button>
 							</div>
 							<span className="text-end hidden md:block">{currencyFormat(product.price * product.cartTotalQuantity)}</span>
 						</div>
 					))}
-					<div className="sub-total py-10 flex flex-col-reverse md:flex-row md:items-start items-center justify-between ">
+					<div className="sub-total py-10 md:flex flex-col-reverse md:flex-row md:items-start items-center justify-between">
 						<button
 							onClick={() => dispatch(clearCart())}
-							className="uppercase font-bold text-orange-500 border border-[#155263] hover:bg-[#155263] hover:text-white duration-300 rounded-sm py-2 px-6">
+							className="uppercase font-bold text-orange-500 border border-[#155263] hover:bg-[#155263] hover:text-white duration-300 rounded-sm py-2 px-6 mb-5">
 							Clear cart
 						</button>
 						<div className="sub-total-details">

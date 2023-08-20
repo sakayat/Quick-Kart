@@ -3,10 +3,10 @@ import {Link} from "react-router-dom";
 
 const Slide = ({item}) => {
     return (
-        <div className="container mx-auto">
+        <div className="container mx-auto px-8">
             <div className="header-content text-white flex flex-col items-start justify-center gap-5 font-bold">
-                <h1 className="uppercase text-6xl">{item.headline}</h1>
-                <p className="w-2/4 leading-7">{item.body}</p>
+                <h1 className="uppercase text-4xl lg:text-6xl">{item.headline}</h1>
+                <p className="w-full lg:w-2/4 leading-7">{item.body}</p>
                 <Link
                     className="relative uppercase border-2 hover:text-white hover:border-orange-500 py-3 px-8"
                     to={`/products/${item.category}`}>

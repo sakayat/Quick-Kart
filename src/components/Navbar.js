@@ -7,7 +7,7 @@ const Navbar = () => {
 	const { cartItems: data } = useSelector((state) => state.cart);
     return (
         <div className="dark:bg-white shadow-md relative z-10">
-            <nav className="navbar container mx-auto flex items-center justify-between py-5">
+            <nav className="navbar container mx-auto flex items-center justify-between py-5 px-8">
                 <div className="logo">
                     <NavLink to="/">
                         <span className="text-2xl text-amber-500 font-bold">T</span>ech{" "}
@@ -22,7 +22,7 @@ const Navbar = () => {
                         <NavLink to="/products">Products</NavLink>
                     </li>
                     <li>
-                        <NavLink to="/" className="cart relative">
+                        <NavLink to="/cart" className="cart relative">
                             <FiShoppingCart className="text-2xl"/>
                             <span
                                 className=" inline-flex justify-center items-center absolute bottom-3 left-3 bg-red-500 text-white rounded-full w-5 h-5">{data.length}</span>
