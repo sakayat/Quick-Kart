@@ -7,7 +7,7 @@ const initialState = {
 }
 
 export const productFetching = createAsyncThunk("products/productFetching", async () => {
-    const res = await axios.get("https://eager-sable-airedale.glitch.me/products")
+    const res = await axios.get("https://quick-kart.onrender.com/api/products")
     return res.data
 })
 

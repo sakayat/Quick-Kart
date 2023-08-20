@@ -46,7 +46,7 @@ const Cart = () => {
 					{data.map((product) => (
 						<div
 							className="grid grid-cols-3 md:grid-cols-5 border-b gap-5 md:gap-10 py-4"
-							key={product.id}>
+							key={product._id}>
 							<div className="product-details flex col-span-2 gap-5">
 								<img className="h-20" src={product.image} alt={product.name} />
 								<div>

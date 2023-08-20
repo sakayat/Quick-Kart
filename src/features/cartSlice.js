@@ -12,7 +12,7 @@ const cartSlice = createSlice({
 	initialState,
 	reducers: {
 		addToCart(state, action) {
-			const existedItemIndex = state.cartItems.findIndex((item) => item.id === action.payload.id);
+			const existedItemIndex = state.cartItems.findIndex((item) => item._id === action.payload._id);
 			if (existedItemIndex >= 0) {
 				state.cartItems[existedItemIndex].cartTotalQuantity += 1;
 				toast.success("Quantity Increased", {
@@ -43,7 +43,7 @@ const cartSlice = createSlice({
 			localStorage.setItem("cartItems", JSON.stringify(state.cartItems));
 		},
 		removeCart(state, action) {
-			const updateData = state.cartItems.filter((item) => item.id !== action.payload.id);
+			const updateData = state.cartItems.filter((item) => item._id !== action.payload._id);
 			state.cartItems = updateData;
             toast.success("Product Removed", {
                 position: "bottom-left",
@@ -62,7 +62,7 @@ const cartSlice = createSlice({
 			localStorage.setItem("cartItem", JSON.stringify(state.cartItems));
 		},
 		decreaseCart(state, action) {
-			const indexItem = state.cartItems.findIndex((item) => item.id === action.payload.id);
+			const indexItem = state.cartItems.findIndex((item) => item._id === action.payload._id);
 			if (state.cartItems[indexItem].cartTotalQuantity > 1) {
 				state.cartItems[indexItem].cartTotalQuantity -= 1;
 				toast.warn("Quantity Decreased", {
@@ -76,7 +76,7 @@ const cartSlice = createSlice({
 					theme: "light",
 				});
 			} else if (state.cartItems[indexItem].cartTotalQuantity === 1) {
-				const updateCartItem = state.cartItems.filter((item) => item.id !== action.payload.id);
+				const updateCartItem = state.cartItems.filter((item) => item._id !== action.payload._id);
 				state.cartItems = updateCartItem;
 			}
 			localStorage.setItem("cartItem", JSON.stringify(state.cartItems));
